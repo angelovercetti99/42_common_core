@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ketmoss <ketmoss@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2026/09/14 15:19:22 by ketmoss           #+#    #+#              #
+#    Updated: 2026/09/15 12:26:46 by ketmoss          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft.a
 SRCS = ft_strlen.c
 CC = gcc
@@ -10,7 +22,7 @@ $(NAME) : $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 clean : 
 	rm -f $(OBJS)
-fclean : 
+fclean : clean
 	rm -f $(NAME)
 re: fclean all
 .PHONY: all clean fclean re
