@@ -6,13 +6,18 @@
 /*   By: ketmoss <ketmoss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 12:08:59 by ketmoss           #+#    #+#             */
-/*   Updated: 2026/09/16 13:08:23 by ketmoss          ###   ########.fr       */
+/*   Updated: 2026/09/16 14:12:21 by ketmoss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 int ft_isalpha(int c)
+{
+    return((ft_isalpha(c) || ft_isdigit(c)));
+}
+
+/*int ft_isalpha(int c)
 {
     if((c >= 97 && c <= 122) || (c >= 65 && c <= 90))
     {
@@ -22,4 +27,4 @@ int ft_isalpha(int c)
     {
         return(0);
     }
-}
+}*/
