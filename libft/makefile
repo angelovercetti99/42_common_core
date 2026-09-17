@@ -6,13 +6,13 @@
 #    By: ketmoss <ketmoss@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/09/14 15:19:22 by ketmoss           #+#    #+#              #
-#    Updated: 2026/09/15 12:26:46 by ketmoss          ###   ########.fr        #
+#    Updated: 2026/09/17 12:16:03 by ketmoss          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 SRCS = ft_strlen.c
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 OBJS  = $(SRCS:.c=.o) 
 %.o : %.c
