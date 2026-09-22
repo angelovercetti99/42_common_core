@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ketmoss <ketmoss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/21 15:10:50 by ketmoss           #+#    #+#             */
-/*   Updated: 2026/09/22 12:51:14 by ketmoss          ###   ########.fr       */
+/*   Created: 2026/09/22 14:14:12 by ketmoss           #+#    #+#             */
+/*   Updated: 2026/09/22 14:16:02 by ketmoss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strrchr(const char *str, int c)
+void    ft_bzero(void *s, size_t n)
 {
-    int i;
-
-    i = ft_strlen(str) - 1;
-    if(c == '\0')
-        return((char *)&str[i+1]);
-    while(i >= 0)
-    {
-        if(str[i] == (char)c)
-            return ((char *)&str[i]);
-        i--;
-    }
-    return NULL;
+    
 }
