@@ -6,7 +6,7 @@
 /*   By: ketmoss <ketmoss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/14 15:19:05 by ketmoss           #+#    #+#             */
-/*   Updated: 2026/09/21 13:48:27 by ketmoss          ###   ########.fr       */
+/*   Updated: 2026/09/21 15:27:29 by ketmoss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,7 @@ void    *ft_memset(void *s, int c, size_t n);
 int ft_strncmp(const char *s1, const char *s2, size_t n);
 int ft_toupper(int c);
 int ft_tolower(int c);
+char    *ft_strrchr(const char *str, int c);
+char    *ft_strchr(const char *str, int c);
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: ketmoss <ketmoss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 14:05:00 by ketmoss           #+#    #+#             */
-/*   Updated: 2026/09/21 15:03:10 by ketmoss          ###   ########.fr       */
+/*   Updated: 2026/09/21 15:27:17 by ketmoss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *strchr(const char *str, int c)
+char    *ft_strchr(const char *str, int c)
 {
     int i;
     
