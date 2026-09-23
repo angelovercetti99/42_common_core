@@ -6,7 +6,7 @@
 /*   By: ketmoss <ketmoss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/14 15:19:05 by ketmoss           #+#    #+#             */
-/*   Updated: 2026/09/21 15:27:29 by ketmoss          ###   ########.fr       */
+/*   Updated: 2026/09/23 12:16:02 by ketmoss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,7 @@ int ft_toupper(int c);
 int ft_tolower(int c);
 char    *ft_strrchr(const char *str, int c);
 char    *ft_strchr(const char *str, int c);
+void    ft_bzero(void *s, size_t n);
+void    *ft_calloc(size_t nmemb, size_t size);
 
 #endif
