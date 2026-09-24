@@ -6,7 +6,7 @@
 /*   By: ketmoss <ketmoss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 12:09:51 by ketmoss           #+#    #+#             */
-/*   Updated: 2026/09/23 13:54:53 by ketmoss          ###   ########.fr       */
+/*   Updated: 2026/09/24 12:09:52 by ketmoss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,23 @@
 
 void    *ft_calloc(size_t nmemb, size_t size)
 {
-    char *ptr;
-    size_t i;
+    void *ptr;
 
     ptr = malloc(nmemb * size);
-    i = 0;
-    if(ptr == 0)
+    if(ptr == NULL)
         return(0);
-    while(i < (nmemb * size))
-    {
-        ptr[i] = 0;
-            i++;
-    }
+    ft_bzero(ptr, nmemb * size);
     return (ptr);
 }
+/*#include "libft.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+int main(void)
+{
+    void *ptr = ft_calloc(0, 5);
+    printf("%p", ptr);
+
+    free (ptr);
+    return(0);
+}*/
