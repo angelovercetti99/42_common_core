@@ -6,7 +6,7 @@
 /*   By: ketmoss <ketmoss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/14 15:19:05 by ketmoss           #+#    #+#             */
-/*   Updated: 2026/09/24 13:27:15 by ketmoss          ###   ########.fr       */
+/*   Updated: 2026/09/28 12:13:04 by ketmoss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ char    *ft_strchr(const char *str, int c);
 void    ft_bzero(void *s, size_t n);
 void    *ft_calloc(size_t nmemb, size_t size);
 void    *ft_memcpy(void *dest_str, const void * src_str, size_t n);
+void    *ft_memchr(const void *s, int c, size_t n);
 
 #endif
