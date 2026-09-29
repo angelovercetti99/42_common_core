@@ -6,7 +6,7 @@
 /*   By: ketmoss <ketmoss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 14:22:25 by ketmoss           #+#    #+#             */
-/*   Updated: 2026/09/29 12:33:15 by ketmoss          ###   ########.fr       */
+/*   Updated: 2026/09/29 12:51:27 by ketmoss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ char    *ft_strdup(const char *s)
     ptr = malloc(len + 1);
     if(ptr == NULL)
         return(NULL);
-    ft_strlcpy(ptr, ,ptr)
+    ft_strlcpy(ptr, s, len + 1);
     return(ptr);
 }
