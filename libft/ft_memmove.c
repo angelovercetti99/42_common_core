@@ -3,40 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ketmoss <ketmoss@student.42.fr>            +#+  +:+       +#+        */
+/*   By: angmarqu <angmarqu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/24 13:28:42 by ketmoss           #+#    #+#             */
-/*   Updated: 2026/09/28 11:48:06 by ketmoss          ###   ########.fr       */
+/*   Created: 2026/09/24 13:28:42 by angmarqu          #+#    #+#             */
+/*   Updated: 2026/11/03 12:11:54 by angmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memmove(void *dest_str, const void *src_str, size_t n)
+void	*ft_memmove(void *dest_str, const void *src_str, size_t n)
 {
-    size_t i;
-    unsigned char *dest;
-    unsigned char *src;
+	unsigned char		*dest;
+	const unsigned char	*src;
 
-    i = 0;
-    dest = (unsigned char*) dest_str;
-    src = (unsigned char*) src_str;
-    if(dest > src)
-    {
-        i = n;
-        while (i > 0)
-        {
-            i--;
-                dest[i] = src[i];
-        }
-    }
-    else
-    {
-        while(i < n)
-        {
-            dest[i] = src[i];
-                i++;
-        }
-    }
-    return(dest_str);
+	if (!dest_str && !src_str)
+		return (NULL);
+	dest = (unsigned char *)dest_str;
+	src = (const unsigned char *)src_str;
+	if (dest <= src)
+		return (ft_memcpy(dest_str, src_str, n));
+	while (n > 0)
+	{
+		n--;
+		dest[n] = src[n];
+	}
+	return (dest_str);
 }

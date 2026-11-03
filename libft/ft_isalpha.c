@@ -3,28 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ketmoss <ketmoss@student.42.fr>            +#+  +:+       +#+        */
+/*   By: angmarqu <angmarqu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/16 12:08:59 by ketmoss           #+#    #+#             */
-/*   Updated: 2026/09/16 14:12:21 by ketmoss          ###   ########.fr       */
+/*   Created: 2026/09/16 12:08:59 by angmarqu          #+#    #+#             */
+/*   Updated: 2026/11/03 12:09:51 by angmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
-    return((ft_isalpha(c) || ft_isdigit(c)));
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		return (1);
+	return (0);
 }
-
-/*int ft_isalpha(int c)
-{
-    if((c >= 97 && c <= 122) || (c >= 65 && c <= 90))
-    {
-        return (1);
-    }
-    else
-    {
-        return(0);
-    }
-}*/
