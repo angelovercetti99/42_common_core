@@ -6,7 +6,7 @@
 /*   By: angmarqu <angmarqu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/14 15:19:05 by angmarqu          #+#    #+#             */
-/*   Updated: 2026/11/03 12:09:51 by angmarqu         ###   ########.fr       */
+/*   Updated: 2026/11/04 13:32:58 by angmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 char	*ft_strdup(const char *s);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 #endif
