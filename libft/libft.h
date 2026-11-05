@@ -6,7 +6,7 @@
 /*   By: angmarqu <angmarqu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/14 15:19:05 by angmarqu          #+#    #+#             */
-/*   Updated: 2026/11/04 15:16:46 by angmarqu         ###   ########.fr       */
+/*   Updated: 2026/11/05 12:45:08 by angmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif
