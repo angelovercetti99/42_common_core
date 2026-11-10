@@ -31,6 +31,7 @@ static size_t	count_len(long nbr)
 	}
 	return (i);
 }
+
 char	*ft_itoa(int n)
 {
 	size_t	len;

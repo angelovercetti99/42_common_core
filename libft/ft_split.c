@@ -6,7 +6,7 @@
 /*   By: angmarqu <angmarqu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 13:22:26 by angmarqu          #+#    #+#             */
-/*   Updated: 2026/11/09 14:50:56 by angmarqu         ###   ########.fr       */
+/*   Updated: 2026/11/10 13:29:34 by angmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ static size_t	count_words(char const *s, char c)
 	}
 	return (count);
 }
+
 static void	free_all(char **arr, size_t j)
 {
 	while (j > 0)
@@ -39,22 +40,16 @@ static void	free_all(char **arr, size_t j)
 	}
 	free(arr);
 }
-char	**ft_split(char const *s, char c)
+
+static int	fill_words(char const *s, char c, char **arr, size_t words)
 {
-	size_t	words;
 	size_t	i;
 	size_t	j;
 	size_t	start;
-	char	**arr;
 
-	words = count_words(s, c);
 	i = 0;
 	j = 0;
 	start = 0;
-	arr = malloc((words + 1) * sizeof(char *));
-	if (!arr)
-		return (NULL);
-	arr[words] = NULL;
 	while (j < words)
 	{
 		while (s[i] == c)
@@ -66,9 +61,24 @@ char	**ft_split(char const *s, char c)
 		if (!arr[j])
 		{
 			free_all(arr, j);
-			return (NULL);
+			return (0);
 		}
 		j++;
 	}
+	return (1);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	size_t	words;
+	char	**arr;
+
+	words = count_words(s, c);
+	arr = malloc((words + 1) * sizeof(char *));
+	if (!arr)
+		return (NULL);
+	arr[words] = NULL;
+	if (!fill_words(s, c, arr, words))
+		return (NULL);
 	return (arr);
 }
