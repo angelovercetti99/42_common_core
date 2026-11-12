@@ -36,3 +36,17 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		ft_strlcpy(p, s + start, sub_len + 1);
 	return (p);
 }
+
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char	*s;
+
+	s = ft_substr("hello world", 6, 5);
+	printf("%s\n", s);
+	free(s);
+	return (0);
+}
+*/

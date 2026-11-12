@@ -30,3 +30,17 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcat (p, s2, ls1 + ls2 + 1);
 	return (p);
 }
+
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char	*s;
+
+	s = ft_strjoin("hello ", "world");
+	printf("%s\n", s);
+	free(s);
+	return (0);
+}
+*/

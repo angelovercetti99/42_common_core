@@ -27,3 +27,13 @@ char	*ft_strchr(const char *str, int c)
 		return ((char *)&str[i]);
 	return (NULL);
 }
+
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("%s\n", ft_strchr("banana", 'n'));
+	return (0);
+}
+*/

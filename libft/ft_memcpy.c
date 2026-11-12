@@ -30,3 +30,16 @@ void	*ft_memcpy(void *dest_str, const void *src_str, size_t n)
 	}
 	return (dest);
 }
+
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char	dst[6];
+
+	ft_memcpy(dst, "hello", 6);
+	printf("%s\n", dst);
+	return (0);
+}
+*/

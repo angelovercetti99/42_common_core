@@ -73,6 +73,8 @@ char	**ft_split(char const *s, char c)
 	size_t	words;
 	char	**arr;
 
+	if (!s)
+		return (NULL);
 	words = count_words(s, c);
 	arr = malloc((words + 1) * sizeof(char *));
 	if (!arr)
@@ -82,3 +84,24 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (arr);
 }
+
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char	**arr;
+	int		i;
+
+	arr = ft_split("  ola  mundo ", ' ');
+	i = 0;
+	while (arr[i])
+	{
+		printf("%s\n", arr[i]);
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
+	return (0);
+}
+*/
