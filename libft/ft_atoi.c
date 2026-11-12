@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	n;
-	int	nb;
+	int		i;
+	int		n;
+	long	nb;
 
 	i = 0;
 	n = 1;
@@ -32,8 +32,8 @@ int	ft_atoi(const char *str)
 		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		nb = nb * 10 + str[i] - '0';
+		nb = nb * 10 + (str[i] - '0');
 		i++;
 	}
-	return (n * nb);
+	return ((int)(n * nb));
 }
