@@ -33,3 +33,17 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[lendst + i] = '\0';
 	return (lendst + lensrc);
 }
+
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char	dst[10] = "abc";
+	size_t	r;
+
+	r = ft_strlcat(dst, "defghij", 10);
+	printf("%s %zu\n", dst, r);
+	return (0);
+}
+*/

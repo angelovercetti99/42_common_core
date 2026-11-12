@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	char			*p;
 
+	if (!s || !f)
+		return (NULL);
 	len = ft_strlen(s);
 	i = 0;
 	p = malloc(len + 1);
@@ -31,3 +33,23 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	p[i] = '\0';
 	return (p);
 }
+
+/*
+#include <stdio.h>
+
+char	to_up(unsigned int i, char c)
+{
+	(void)i;
+	return (ft_toupper(c));
+}
+
+int	main(void)
+{
+	char	*s;
+
+	s = ft_strmapi("hello", to_up);
+	printf("%s\n", s);
+	free(s);
+	return (0);
+}
+*/

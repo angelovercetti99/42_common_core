@@ -18,6 +18,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*no;
 	void	*conteudo;
 
+	if (!f || !del)
+		return (NULL);
 	nova = NULL;
 	while (lst != NULL)
 	{
@@ -34,3 +36,37 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (nova);
 }
+
+/*
+#include <stdio.h>
+
+void	*copy(void *c)
+{
+	return (ft_strdup(c));
+}
+
+void	nothing(void *c)
+{
+	(void)c;
+}
+
+int	main(void)
+{
+	t_list	*l;
+	t_list	*m;
+	t_list	*p;
+
+	l = ft_lstnew("a");
+	ft_lstadd_back(&l, ft_lstnew("b"));
+	m = ft_lstmap(l, copy, free);
+	p = m;
+	while (p)
+	{
+		printf("%s\n", (char *)p->content);
+		p = p->next;
+	}
+	ft_lstclear(&m, free);
+	ft_lstclear(&l, nothing);
+	return (0);
+}
+*/

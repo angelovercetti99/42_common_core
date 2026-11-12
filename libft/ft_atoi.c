@@ -37,3 +37,13 @@ int	ft_atoi(const char *str)
 	}
 	return ((int)(n * nb));
 }
+
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("%d\n", ft_atoi("  -42abc"));
+	return (0);
+}
+*/

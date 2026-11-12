@@ -25,3 +25,13 @@ char	*ft_strrchr(const char *str, int c)
 	}
 	return (NULL);
 }
+
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("%s\n", ft_strrchr("banana", 'n'));
+	return (0);
+}
+*/

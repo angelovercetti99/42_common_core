@@ -30,3 +30,16 @@ void	*ft_memmove(void *dest_str, const void *src_str, size_t n)
 	}
 	return (dest_str);
 }
+
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char	s[] = "123456";
+
+	ft_memmove(s + 2, s, 4);
+	printf("%s\n", s);
+	return (0);
+}
+*/

@@ -59,3 +59,17 @@ char	*ft_itoa(int n)
 	}
 	return (p);
 }
+
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char	*s;
+
+	s = ft_itoa(-2147483648);
+	printf("%s\n", s);
+	free(s);
+	return (0);
+}
+*/
