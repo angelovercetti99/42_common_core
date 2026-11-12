@@ -6,7 +6,7 @@
 /*   By: angmarqu <angmarqu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 12:10:11 by angmarqu          #+#    #+#             */
-/*   Updated: 2026/11/12 12:27:58 by angmarqu         ###   ########.fr       */
+/*   Updated: 2026/11/12 13:03:50 by angmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ unsigned int	ft_lstsize(t_list *lst)
 	while (lst != NULL)
 	{
 		lst = lst->next;
-		count ++;
+		count++;
 	}
 	return (count);
 }
