@@ -46,6 +46,8 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
+			if (!format[i + 1])
+				break ;
 			count += ft_conversion(format[i + 1], &args);
 			i += 2;
 		}
@@ -58,3 +60,18 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
+
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	int	a;
+	int	b;
+
+	a = printf("%c %s %d %u %x %p %%\n", 'a', "ola", -42, 42, 255, &a);
+	b = ft_printf("%c %s %d %u %x %p %%\n", 'a', "ola", -42, 42, 255, &a);
+	printf("%d %d\n", a, b);
+	return (0);
+}
+*/
