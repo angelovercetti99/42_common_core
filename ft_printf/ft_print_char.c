@@ -6,11 +6,11 @@
 /*   By: angmarqu <angmarqu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 11:11:44 by angmarqu          #+#    #+#             */
-/*   Updated: 2026/11/18 11:17:39 by angmarqu         ###   ########.fr       */
+/*   Updated: 2026/11/18 11:39:44 by angmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
 int	ft_print_char(char c)
 {
