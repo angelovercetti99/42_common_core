@@ -14,8 +14,8 @@
 
 int	ft_print_base(unsigned long n, char *base)
 {
-	unsigned long len;
-	int	count;
+	unsigned long	len;
+	int				count;
 
 	len = 0;
 	count = 0;

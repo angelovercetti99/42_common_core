@@ -15,7 +15,7 @@
 int	ft_print_nbr(int n)
 {
 	long	nb;
-	int	count;
+	int		count;
 
 	nb = n;
 	count = 0;

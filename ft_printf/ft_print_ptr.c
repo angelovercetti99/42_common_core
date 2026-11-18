@@ -14,7 +14,7 @@
 
 int	ft_print_ptr(void *ptr)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (!ptr)
