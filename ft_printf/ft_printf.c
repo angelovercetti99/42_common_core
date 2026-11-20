@@ -6,7 +6,7 @@
 /*   By: angmarqu <angmarqu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 14:06:46 by angmarqu          #+#    #+#             */
-/*   Updated: 2026/11/18 15:06:23 by angmarqu         ###   ########.fr       */
+/*   Updated: 2026/11/20 12:12:47 by angmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int	ft_printf(const char *format, ...)
 	int		i;
 	int		count;
 
+	if (!format)
+		return (-1);
 	i = 0;
 	count = 0;
 	va_start(args, format);
@@ -52,15 +54,11 @@ int	ft_printf(const char *format, ...)
 			i += 2;
 		}
 		else
-		{
-			count += ft_print_char(format[i]);
-			i++;
-		}
+			count += ft_print_char(format[i++]);
 	}
 	va_end(args);
 	return (count);
 }
-
 /*
 #include <stdio.h>
 
@@ -75,3 +73,12 @@ int	main(void)
 	return (0);
 }
 */
+
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	ft_printf("Hello %a 42\n");
+	return (0);
+}*/

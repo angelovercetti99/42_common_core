@@ -134,7 +134,4 @@ address of a pointer.
 
 ### AI usage
 
-AI was used as a peer: it explained `printf` and variadic functions in the style of a
-man page, answered my questions, and reviewed the code I wrote, without giving me the
-solutions. It also wrote the `Makefile` and the header, fixed Norm alignment, ran
-tests against the real `printf`, and helped write this README.
+AI was used as a peer: it explained `printf` and variadic functions in the style of a man page, answered my questions, and reviewed the code I wrote, without giving me the solutions.
