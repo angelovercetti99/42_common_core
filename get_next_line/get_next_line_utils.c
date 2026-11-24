@@ -6,7 +6,7 @@
 /*   By: angmarqu <angmarqu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 12:38:08 by angmarqu          #+#    #+#             */
-/*   Updated: 2026/11/24 13:07:52 by angmarqu         ###   ########.fr       */
+/*   Updated: 2026/11/24 13:24:52 by angmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
+
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;
@@ -38,6 +39,7 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)&s[i]);
 	return (NULL);
 }
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*new;
@@ -63,4 +65,30 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	new[i + j] = '\0';
 	return (new);
+}
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*sub;
+	size_t	i;
+	size_t	slen;
+
+	if (!s)
+		return (NULL);
+	slen = ft_strlen(s);
+	if (start >= slen)
+		len = 0;
+	else if (len > slen - start)
+		len = slen - start;
+	sub = malloc (len + 1);
+	if (!sub)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		sub[i] = s[start + i];
+		i++;
+	}
+	sub[i] = '\0';
+	return (sub);
 }

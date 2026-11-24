@@ -101,6 +101,22 @@ call 2: stash "a" + "deus", read returns 0 → returns "adeus"
 call 3: stash empty, read returns 0 → returns NULL
 ```
 
+### Helper functions
+
+The libft is not allowed in this project, so the helpers are rewritten in
+`get_next_line_utils.c`:
+
+| Function | Used for |
+|---|---|
+| `ft_strlen` | Measuring the stash and the block, for `malloc` |
+| `ft_strchr` | Checking if the stash already has a `\n` (it returns `NULL` if the stash is `NULL`) |
+| `ft_strjoin` | Adding the block that was read to the end of the stash (a `NULL` stash counts as `""`, so the first call works) |
+| `ft_substr` | Taking the line out of the stash, and keeping what comes after the `\n` |
+
+`ft_strjoin` returns a new string, so `get_next_line` keeps it in a temporary
+pointer, frees the old stash and only then points the stash to the new one. This way
+no memory is lost on each `read()`.
+
 ### Why this design
 
 - **It reads as little as possible.** It stops reading as soon as a `\n` is in the
