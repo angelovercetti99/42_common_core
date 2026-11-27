@@ -34,6 +34,12 @@ There is no library to build: the files are compiled together with your own code
 cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 get_next_line.c get_next_line_utils.c main.c
 ```
 
+For the bonus part, use the bonus files and include `get_next_line_bonus.h`:
+
+```bash
+cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 get_next_line_bonus.c get_next_line_utils_bonus.c main.c
+```
+
 ### Usage
 
 ```c
@@ -87,19 +93,36 @@ on the length of the lines.
 
 ### Each call
 
-1. While the stash has no `\n`:
+`get_next_line` first checks its input: if `fd` is negative or `BUFFER_SIZE` is not
+positive, it returns `NULL` right away. Then it calls three functions, one per step:
+
+1. **`read_to_stash`**: while the stash has no `\n`:
    - read a block of `BUFFER_SIZE` bytes;
    - if `read()` returns 0, the file has ended: stop;
    - add the block to the end of the stash.
-2. Take the line out of the stash (up to and including the `\n`).
-3. Keep in the stash only what comes after the `\n`.
-4. Return the line, or `NULL` if there was nothing left.
+2. **`extract_line`**: take the line out of the stash (up to and including the `\n`).
+   If the stash is empty, there is no line: the stash is freed and `NULL` is returned.
+3. **`clean_stash`**: keep in the stash only what comes after the `\n`. The old stash
+   is freed. If nothing is left, the stash becomes `NULL` instead of `""`, so no
+   empty string stays allocated at the end of the file.
+4. Return the line.
 
 ```
 call 1: stash "ola\na"  → returns "ola\n", stash keeps "a"
 call 2: stash "a" + "deus", read returns 0 → returns "adeus"
 call 3: stash empty, read returns 0 → returns NULL
 ```
+
+### Errors
+
+- **`read()` returns -1** (closed or invalid file descriptor): the buffer and the
+  stash are freed and `get_next_line` returns `NULL`.
+- **`malloc` fails** (in the buffer, in `ft_strjoin` or in `ft_substr`): the memory
+  already allocated is freed and nothing crashes. `get_next_line` returns `NULL`
+  (if it fails while keeping the rest in `clean_stash`, the line is still returned
+  and the stash becomes `NULL`).
+- After an error or at the end of the file the stash is set back to `NULL`, so it
+  never points to memory that was already freed.
 
 ### Helper functions
 
@@ -117,13 +140,36 @@ The libft is not allowed in this project, so the helpers are rewritten in
 pointer, frees the old stash and only then points the stash to the new one. This way
 no memory is lost on each `read()`.
 
+### Bonus: several file descriptors
+
+The mandatory part has only one stash, so reading from fd 3 and then from fd 4 would
+mix the two files. The bonus keeps **one stash per file descriptor**, still with a
+single static variable: an array of stashes.
+
+```c
+static char	*stash[MAX_FD];
+```
+
+```
+ stash[0]  stash[1]  stash[2]  stash[3]   stash[4]  ...  stash[1023]
+   NULL      NULL      NULL    "a2\na3"   "b2\n"           NULL
+```
+
+The `fd` itself is the index: `get_next_line(3)` only uses `stash[3]`, and
+`get_next_line(4)` only uses `stash[4]`. Because the array is `static`, every box
+starts as `NULL`. `MAX_FD` is 1024 by default (it can be changed with `-D`), and any
+`fd >= MAX_FD` returns `NULL`, so the function never writes outside the array. The
+three step functions are the same as in the mandatory part: they receive
+`stash[fd]` instead of `stash`.
+
 ### Why this design
 
 - **It reads as little as possible.** It stops reading as soon as a `\n` is in the
   stash, as the subject asks, instead of reading the whole file first.
 - **It works with any `BUFFER_SIZE`**, from 1 to very large values, because the
   stash grows with `malloc` as needed.
-- **No global variables**: the only state kept between calls is the static stash.
+- **No global variables**: the only state kept between calls is the static stash
+  (one static array in the bonus).
 
 ## Resources
 
@@ -141,5 +187,7 @@ AI was used as a peer, without giving me the code:
 - **The algorithm:** it asked me questions so I could build the steps myself (the
   stash, the reading loop, what stays after the `\n`).
 - **The code:** it reviewed the code I wrote in `get_next_line.c`,
-  `get_next_line_utils.c` and `get_next_line.h`.
+  `get_next_line_utils.c` and the bonus files, and fixed the Norm formatting. It
+  wrote the headers (`get_next_line.h`, `get_next_line_bonus.h`) and tested the
+  project (several `BUFFER_SIZE` values, several file descriptors, leaks).
 - **This README:** it helped me write it in English.
