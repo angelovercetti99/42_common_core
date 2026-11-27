@@ -180,14 +180,16 @@ three step functions are the same as in the mandatory part: they receive
 
 ### AI usage
 
-AI was used as a peer, without giving me the code:
+I used AI as a peer, the same way I would work with another student. It did not
+give me the answers or write the functions for me: I wrote all of them myself.
 
-- **Understanding the subject:** it explained `read()`, `BUFFER_SIZE` and static
-  variables in the style of a man page.
-- **The algorithm:** it asked me questions so I could build the steps myself (the
-  stash, the reading loop, what stays after the `\n`).
-- **The code:** it reviewed the code I wrote in `get_next_line.c`,
-  `get_next_line_utils.c` and the bonus files, and fixed the Norm formatting. It
-  wrote the headers (`get_next_line.h`, `get_next_line_bonus.h`) and tested the
-  project (several `BUFFER_SIZE` values, several file descriptors, leaks).
-- **This README:** it helped me write it in English.
+- **Concepts:** when I did not know something (`read()`, file descriptors,
+  `BUFFER_SIZE`, static variables, arrays of pointers for the bonus), it explained
+  the concept, like a man page, with small drawings of the memory.
+- **Questions instead of answers:** to build the algorithm, it asked me questions
+  (what has to survive between calls, when to stop reading, what stays after the
+  `\n`, how to keep one stash per file descriptor) and gave me small hints when I
+  was stuck.
+- **Review:** when I showed it my code, it pointed out where the mistakes were
+  (leaks, wrong conditions, reading outside the array) and explained why, so I
+  could fix them myself.
